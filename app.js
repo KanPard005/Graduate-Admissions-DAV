@@ -38,12 +38,15 @@ submit.addEventListener('click', function() {
   if (!entry["univ"]) ava = false;
 
   entry["gre"] = Number(document.querySelector('#gre').value);
+  if (entry["gre"] > 340) entry["gre"] = 0;
   if (!entry.gre) ava = false;
 
   entry["toefl"] = Number(document.querySelector('#toefl').value);
+  if (entry["toefl"] > 340) entry["toefl"] = 0;
   if (!entry["toefl"]) ava = false;
 
   entry["cgpa"] = Number(document.querySelector('#cgpa').value);
+  if (entry["cgpa"] > 340) entry["cgpa"] = 0;
   if (!entry["cgpa"]) ava = false;
   
   entry["resex"] = -1;
