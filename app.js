@@ -14,6 +14,14 @@ const coeff = {
   "resex": 0.0245,
 };
 
+// let coeff = {
+//   "bias": -1.4049839,
+//   "gre": 0.0017402,
+//   "toefl":0.0033154,
+//   "cgpa": 0.1404895,
+//   "resex": 0.0280904
+// }
+
 let entry = {
   "bias": 1, 
   "sop": 0,
@@ -22,8 +30,9 @@ let entry = {
   "gre": 0,
   "toefl": 0,
   "cgpa": 0,
-  "resex": 0,
+  "resex": 0
 };
+
 
 submit = document.querySelector('.btn');
 submit.addEventListener('click', function() {
@@ -66,6 +75,7 @@ submit.addEventListener('click', function() {
       console.log(entry[k]);
       val += coeff[k] * entry[k];
     });
+    val = Math.max(0, val);
     console.log(val);
     document.querySelector('.chance').innerHTML = val.toFixed(4)*100 + '%';
   } 
@@ -73,4 +83,19 @@ submit.addEventListener('click', function() {
     document.querySelector('.incomplete').style.display = 'block';
     document.querySelector('.result').style.display = 'none';
   }
+});
+
+let doubts = document.getElementsByClassName('doubt');
+doubts = Array.from(doubts);
+doubts.forEach((doubt) => {
+  doubt.addEventListener('click', function() {
+    let e = doubt.parentElement.parentElement.parentElement.querySelector('p');
+    console.log(e.style.display);
+    if (e.style.display === "none") {
+      e.style.display = "block";
+    } else {
+      e.style.display = "none";
+    }
+    console.log(e.style.display);
+  });
 });

@@ -3,6 +3,7 @@ body {
 }
 
 .card {
+  margin:30px auto;
   background-color: #555;
   position: relative;
   animation: slideup 0.7s;
@@ -36,9 +37,13 @@ body {
 }
 
 footer {
+  bottom: 0;
+  display: block;
+  width: 100%;
   text-align: center;
   background-color: black;
   color: white;
-  padding: 20px;
+  padding: 30px;
   bottom: 0;
+  z-index: 1;
 }
