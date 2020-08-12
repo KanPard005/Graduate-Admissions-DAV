@@ -28,9 +28,11 @@ submit.addEventListener('click', function() {
   if (resex == -1) ava = false;
   console.log(resex);
   if (ava) {
-    console.log('All available');
+    document.querySelector('.incomplete').style.display = 'none';
+    document.querySelector('.result').style.display = 'block';
   } 
   else {
-
+    document.querySelector('.incomplete').style.display = 'block';
+    document.querySelector('.result').style.display = 'none';
   }
 });

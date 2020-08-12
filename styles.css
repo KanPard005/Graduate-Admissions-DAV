@@ -12,3 +12,25 @@ body {
   from {top: 50px; opacity: 0;}
   to {top: 0px; opacity: 1;}
 }
+
+.incomplete {
+  background-color: tomato;
+  color: white;
+  border-radius: 3px;
+  padding: 5px;
+  display: none;
+}
+
+.result {
+  background-color: lightgreen;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+}
+
+.chance {
+  margin: 5px auto;
+}

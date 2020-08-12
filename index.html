@@ -15,6 +15,7 @@
   <div class="col s12 m8 offset-m2">
   <div class="card" id="card">
   <div class="card-content">
+    <div class='incomplete'>Please fill all the fields with the appropriate values</div>
     <h3>Chance of Admission calculator</h3>
     <form action="">
       <div class='input-field' id='sop'>
@@ -49,17 +50,18 @@
       </div>
       <div class='input-field'>
       <input type="text" id="gre" class='validate' placeholder="Enter your GRE Score" required>
-      <label for="gre" class='black-text'><strong>GRE Score</strong></label>
+      <label for="gre" class='black-text'><strong>GRE Score (out of 340)</strong></label>
       </div>
       <div class='input-field'>
       <input type="text" id="toefl" class='validate' placeholder="Enter your TOEFL Score" required>
-      <label for="toefl" class='black-text'><strong>TOEFL Score</strong></label>
+      <label for="toefl" class='black-text'><strong>TOEFL Score (out of 120)</strong></label>
       </div>
       <div class='input-field'>
       <input type="text" id="cgpa" class='validate' placeholder="Enter your CGPA" required>
       <label for="cgpa" class='black-text'><strong>CGPA</strong></label>
       </div>
-      <label for="gre" class='black-text'><strong>Research Experience</strong></label>
+      <label for="gre" class='black-text'><strong>Do you have any prior research experience?</strong></label>
+      <br>
       <label class='black-text'>
       <input type="radio" name='resex'>
       <span>Yes</span>
@@ -71,6 +73,7 @@
       <br><br>
       <a class="waves-effect waves-light btn" href="#">Calculate my chance of Admission</a>
     </form>
+    <div class='result'>Your Chance of Admission according to our model is: <br><span class='chance'>90%</span></div>
   </div>  
   </div>
   </div>
