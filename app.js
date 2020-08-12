@@ -3,33 +3,68 @@ document.addEventListener('DOMContentLoaded', function() {
   let instances = M.FormSelect.init(elems);
 })
 
+const coeff = {
+  "bias": -1.2717,
+  "sop": 0.0015,
+  "lor": 0.0168,
+  "univ": 0.0060,
+  "gre": 0.0018,
+  "toefl": 0.0027,
+  "cgpa": 0.1186,
+  "resex": 0.0245,
+};
+
+let entry = {
+  "bias": 1, 
+  "sop": 0,
+  "lor": 0,
+  "univ": 0,
+  "gre": 0,
+  "toefl": 0,
+  "cgpa": 0,
+  "resex": 0,
+};
+
 submit = document.querySelector('.btn');
 submit.addEventListener('click', function() {
   let ava = true;
-  let sop = Number(document.querySelector('.selectsop').value);
-  if (!sop) ava = false;
-  console.log(sop);
-  let lor = Number(document.querySelector('.selectlor').value);
-  if (!lor) ava = false;
-  console.log(lor);
-  let gre = Number(document.querySelector('#gre').value);
-  if (!gre) ava = false;
-  console.log(gre);
-  let toefl = Number(document.querySelector('#toefl').value);
-  if (!toefl) ava = false;
-  console.log(toefl);
-  let cgpa = Number(document.querySelector('#cgpa').value);
-  if (!cgpa) ava = false;
-  console.log(cgpa);
-  let resex = -1;
+  entry["sop"] = Number(document.querySelector('.selectsop').value);
+  if (!entry["sop"]) ava = false;
+
+  entry["lor"] = Number(document.querySelector('.selectlor').value);
+  if (!entry.lor) ava = false;
+
+  entry["univ"] = Number(document.querySelector('.selectuniv').value);
+  if (!entry["univ"]) ava = false;
+
+  entry["gre"] = Number(document.querySelector('#gre').value);
+  if (!entry.gre) ava = false;
+
+  entry["toefl"] = Number(document.querySelector('#toefl').value);
+  if (!entry["toefl"]) ava = false;
+
+  entry["cgpa"] = Number(document.querySelector('#cgpa').value);
+  if (!entry["cgpa"]) ava = false;
+  
+  entry["resex"] = -1;
   sel = document.getElementsByName('resex');
-  if (sel[0].checked) resex = 1;
-  else if (sel[1].checked) resex = 0;
-  if (resex == -1) ava = false;
-  console.log(resex);
+  if (sel[0].checked) entry["resex"] = 1;
+  else if (sel[1].checked) entry["resex"] = 0;
+  if (entry["resex"] == -1) ava = false;
+
   if (ava) {
     document.querySelector('.incomplete').style.display = 'none';
     document.querySelector('.result').style.display = 'block';
+    let val = 0;
+    let keys = Object.keys(coeff);
+    console.log(keys);
+    keys.forEach((k) => {
+      console.log(coeff[k]);
+      console.log(entry[k]);
+      val += coeff[k] * entry[k];
+    });
+    console.log(val);
+    document.querySelector('.chance').innerHTML = val.toFixed(4)*100 + '%';
   } 
   else {
     document.querySelector('.incomplete').style.display = 'block';

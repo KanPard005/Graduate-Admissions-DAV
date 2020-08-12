@@ -34,3 +34,11 @@ body {
 .chance {
   margin: 5px auto;
 }
+
+footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  bottom: 0;
+}
