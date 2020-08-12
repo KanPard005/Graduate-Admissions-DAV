@@ -1,0 +1,14 @@
+body {
+  background-color: #607d8b;
+}
+
+.card {
+  background-color: #555;
+  position: relative;
+  animation: slideup 0.7s;
+}
+
+@keyframes slideup {
+  from {top: 50px; opacity: 0;}
+  to {top: 0px; opacity: 1;}
+}

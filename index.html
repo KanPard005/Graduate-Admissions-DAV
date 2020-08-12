@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Probability Calculator</title>
+  <link rel='stylesheet' href='styles.css'>
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+  <div class="col s12 m8 offset-m2">
+  <div class="card" id="card">
+  <div class="card-content">
+    <h3>Chance of Admission calculator</h3>
+    <form action="">
+      <div class='input-field' id='sop'>
+        <select class='selectsop'>
+          <option value="" disabled selected>Choose your SOP Rating</option>
+          <option value="1.0">1.0</option>
+          <option value="1.5">1.5</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5">2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <label for="sop" class='black-text'><strong>SOP Rating</strong></label>
+      </div>
+      <div class='input-field' id='lor'>
+        <select class='selectlor'>
+          <option value="" disabled selected>Choose your SOP Rating</option>
+          <option value="1.0">1.0</option>
+          <option value="1.5">1.5</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5">2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <label for="lor" class='black-text'><strong>LOR rating</strong></label>
+      </div>
+      <div class='input-field'>
+      <input type="text" id="gre" class='validate' placeholder="Enter your GRE Score" required>
+      <label for="gre" class='black-text'><strong>GRE Score</strong></label>
+      </div>
+      <div class='input-field'>
+      <input type="text" id="toefl" class='validate' placeholder="Enter your TOEFL Score" required>
+      <label for="toefl" class='black-text'><strong>TOEFL Score</strong></label>
+      </div>
+      <div class='input-field'>
+      <input type="text" id="cgpa" class='validate' placeholder="Enter your CGPA" required>
+      <label for="cgpa" class='black-text'><strong>CGPA</strong></label>
+      </div>
+      <label for="gre" class='black-text'><strong>Research Experience</strong></label>
+      <label class='black-text'>
+      <input type="radio" name='resex'>
+      <span>Yes</span>
+      </label>
+      <label class='black-text'>
+      <input type="radio" name='resex'>
+      <span>No</span>
+      </label>
+      <br><br>
+      <a class="waves-effect waves-light btn" href="#">Calculate my chance of Admission</a>
+    </form>
+  </div>  
+  </div>
+  </div>
+  </div>
+  <script src='app.js'></script>
+</body>
+</html>
